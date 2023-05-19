@@ -11,7 +11,7 @@ for letra, i in zip(abecedario, range(12, 68, 7)):
     df.pop('Qualification')
     dict_table[f'Grupo{letra}'] = df
 
-with open('dict_table', 'wb') as output:
+with open('data/dict_table', 'wb') as output:
     pickle.dump(dict_table, output)
 """
     print(df)
