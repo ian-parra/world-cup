@@ -24,6 +24,7 @@ def get_matches(year):
         score.append(match.find('th', class_='fscore').get_text())
         away.append(match.find('th', class_='faway').get_text())
 
+
     dict_football = {'Local': home, 'Marcador': score, 'visitante': away}
     df_football = pd.DataFrame(dict_football)
     df_football['year'] = year  # print(df_football)
@@ -34,3 +35,7 @@ def get_matches(year):
 fifa = [get_matches(year) for year in years]
 df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
+
+#fixture 2022
+df_fixture = get_matches('2022')
+df_fifa.to_csv('fifa_worldcup_ficture2022.csv', index=False)
