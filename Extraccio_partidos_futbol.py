@@ -37,5 +37,5 @@ df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
 
 #fixture 2022
-df_fixture = get_matches('2022')
-df_fifa.to_csv('fifa_worldcup_ficture2022.csv', index=False)
+df_fixture = get_matches(2022)
+df_fixture.to_csv('fifa_worldcup_fixture2022.csv', index=False)
