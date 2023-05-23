@@ -1,7 +1,7 @@
 import pandas as pd
 
 df_historical_data = pd.read_csv('data/fifa_worldcup_historical_data.csv')
-df_fixture = pd.read_csv('data/fifa_worldcup_fixture2022.csv')
+df_fixture = pd.read_csv('data/fifa_worldcup_fixture.csv')
 
 # limpiando el fixture
 df_fixture['home'] = df_fixture['home'].str.strip()
