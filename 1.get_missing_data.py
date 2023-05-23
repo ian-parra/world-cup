@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 import time
 import pandas as pd
 
-path = r'E:\chromedriver_wepdriver\chromedriver.exe'
+path = r'E:\chromedriver_wepdriver\chromedriver'
 service = Service(executable_path=path)
 driver = webdriver.Chrome(service=service)
 
