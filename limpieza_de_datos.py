@@ -30,3 +30,11 @@ df_historical_data.drop('score', axis=1, inplace=True)  # eliminando la columna 
 df_historical_data.rename(columns={'home': 'Equipo Local', 'away': 'Equipo Visitante',
                                    'year': 'Año'}, inplace=True)
 df_historical_data = df_historical_data.astype({'Goles del Local': int, 'Goles del Visitante': int, 'Año': int})
+
+# creo columna de goles totales por partido
+df_historical_data['Goles Totales'] = df_historical_data['Goles del Local'] + df_historical_data['Goles del Visitante']
+
+# exportando data limpia
+df_historical_data.to_csv('clean_fifa_worldcup_matches.csv', index=False)
+df_fixture.to_csv('clean_fifa_worldcup_fixture.csv', index=False)
+
