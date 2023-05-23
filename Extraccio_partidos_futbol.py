@@ -18,14 +18,19 @@ def get_matches(year):
     home = []
     score = []
     away = []
+    stadium = []
 
     for match in matches:
         home.append(match.find('th', class_='fhome').get_text())
         score.append(match.find('th', class_='fscore').get_text())
         away.append(match.find('th', class_='faway').get_text())
 
+        if stadium_element is not None:
+            stadium.append(stadium_element.get_text())
+        else:
+            stadium.append("N/A")
 
-    dict_football = {'Local': home, 'Marcador': score, 'visitante': away}
+    dict_football = {'Local': home, 'Marcador': score, 'visitante': away, 'Estadio': stadium}
     df_football = pd.DataFrame(dict_football)
     df_football['year'] = year  # print(df_football)
     return df_football
@@ -36,6 +41,6 @@ fifa = [get_matches(year) for year in years]
 df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
 
-#fixture 2022
+# fixture 2022
 df_fixture = get_matches(2022)
 df_fixture.to_csv('fifa_worldcup_fixture2022.csv', index=False)
