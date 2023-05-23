@@ -1,0 +1,32 @@
+1930 18
+1934 17
+1938 18
+1950 22
+1954 26
+1958 35
+1962 32
+1966 32
+1970 8
+1974 2
+1978 2
+1982 4
+1986 16
+1990 16
+1994 16
+1998 16
+2002 16
+2006 16
+2010 64
+2014 64
+2018 64
+   HomeTeam     AwayTeam  Year  HomeGoals  AwayGoals  TotalGoals
+83   Turkey  South Korea  1954          7          0           7
+         HomeTeam AwayTeam  Year  HomeGoals  AwayGoals  TotalGoals
+80   West Germany   Turkey  1954          4          1           5
+84   West Germany   Turkey  1954          7          2           9
+295   South Korea   Turkey  2002          2          3           5
+294        Brazil   Turkey  2002          1          0           1
+292       Senegal   Turkey  2002          0          1           1
+287         Japan   Turkey  2002          0          1           1
+
+Process finished with exit code 0
