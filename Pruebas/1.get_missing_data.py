@@ -1,9 +1,9 @@
-from selenium import webdriver
+"""from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import time
 import pandas as pd
 
-path = r'E:\chromedriver_wepdriver\chromedriver'
+path = 'E:\chromedriver_wepdriver'
 service = Service(executable_path=path)
 driver = webdriver.Chrome(service=service)
 
@@ -42,3 +42,7 @@ fifa = [get_missing_data(year) for year in years]
 driver.quit()
 df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv("fifa_worldcup_missing_data.csv", index=False)
+
+Cambio en el html
+
+"""
