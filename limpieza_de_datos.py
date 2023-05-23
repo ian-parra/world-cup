@@ -17,7 +17,16 @@ eliminar_index = df_historical_data[df_historical_data['home'].str.contains('Swe
 
 df_historical_data.drop(index=eliminar_index, inplace=True)
 
-# columnas local/visitante limpiando el score cuando los partidos llega a penales 
+# columnas local/visitante limpiando el score cuando los partidos llega a penales
 df_historical_data['score'] = df_historical_data['score'].str.replace('[^\d–]', '', regex=True)
-df_historical_data['home'] = df_historical_data['home'].str.strip() #espacios en blanco limpios: Yugoslavia
-df_historical_data['away'] = df_historical_data['away'].str.strip(
+df_historical_data['home'] = df_historical_data['home'].str.strip()  # espacios en blanco limpios: Yugoslavia
+df_historical_data['away'] = df_historical_data['away'].str.strip()
+
+# creo columnas de goles de local y visitante para eliminar la columna score
+df_historical_data[['Goles del Local', 'Goles del Visitante']] = df_historical_data['score'].str.split('–', expand=True)
+df_historical_data.drop('score', axis=1, inplace=True)  # eliminando la columna score
+
+# modifico el texto de las columnas
+df_historical_data.rename(columns={'home': 'Equipo Local', 'away': 'Equipo Visitante',
+                                   'year': 'Año'}, inplace=True)
+df_historical_data = df_historical_data.astype({'Goles del Local': int, 'Goles del Visitante': int, 'Año': int})
