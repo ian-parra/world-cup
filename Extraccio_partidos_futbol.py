@@ -13,7 +13,7 @@ def get_matches(year):
     response = requests.get(wep)
     content = response.text  # print(response.text) observación de contenido
     soup = BeautifulSoup(content, 'lxml')
-    matches = soup.find_all('div', class_='footballbox')  # almaceno los partidos de futbol
+    matches = soup.find_all('div', class_='footballbox', itemprop="location")  # almaceno los partidos de futbol
 
     home = []
     score = []
@@ -24,7 +24,7 @@ def get_matches(year):
         home.append(match.find('th', class_='fhome').get_text())
         score.append(match.find('th', class_='fscore').get_text())
         away.append(match.find('th', class_='faway').get_text())
-
+        stadium_element = match.find('th', class_='fstadium')
         if stadium_element is not None:
             stadium.append(stadium_element.get_text())
         else:
