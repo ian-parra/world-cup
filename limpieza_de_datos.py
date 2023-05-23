@@ -40,3 +40,14 @@ df_historical_data['TotalGoals'] = df_historical_data['HomeGoals'] + df_historic
 df_historical_data.to_csv('clean_fifa_worldcup_matches.csv', index=False)
 df_fixture.to_csv('clean_fifa_worldcup_fixture.csv', index=False)
 
+# verificando números de partidos por competición
+years = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974,
+         1978, 1982, 1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014,
+         2018]
+
+for year in years:
+    print(year, len(df_historical_data[df_historical_data['Year'] == year]))
+
+# verificacion de datos de una seleccion
+print(df_historical_data[df_historical_data['HomeTeam'].str.contains('Turkey')])
+print(df_historical_data[df_historical_data['AwayTeam'].str.contains('Turkey')])
