@@ -14,8 +14,3 @@ for letter, i in zip(abecedario, range(12, 68, 7)):
 
 with open('data/dict_table', 'wb') as output:
     pickle.dump(dict_table, output)
-"""
-    print(df)
-dict_table.keys()
-print(abecedario)
-"""
